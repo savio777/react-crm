@@ -1,6 +1,7 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 
 import { useThemeCustom } from "./theme";
+import Routes from "./routes";
 import Topbar from "./components/global/Topbar";
 import Sidebar from "./components/global/Sidebar";
 
@@ -10,9 +11,11 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className="app">
+        <Sidebar />
+
         <main className="content">
           <Topbar />
-          <Sidebar />
+          <Routes />
         </main>
       </div>
       <CssBaseline />
