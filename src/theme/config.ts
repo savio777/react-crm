@@ -1,6 +1,6 @@
 import { ThemeOptions } from "@mui/material/styles";
 
-export const tokens = (mode: IThemeMode) => ({
+export const colorTokens = (mode: IThemeMode) => ({
   ...(mode === "dark"
     ? {
         grey: {
@@ -119,7 +119,7 @@ export const tokens = (mode: IThemeMode) => ({
 });
 
 export const themeSettings: ThemeOptions = (mode: IThemeMode): ThemeOptions => {
-  const colors = tokens(mode);
+  const colors = colorTokens(mode);
 
   return {
     palette: {
