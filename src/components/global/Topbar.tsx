@@ -1,4 +1,4 @@
-import { Box, IconButton } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import InputBase from "@mui/material/InputBase";
 
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
@@ -15,7 +15,7 @@ import { useThemeCustom, useTranslation } from "../../hooks";
 const Topbar: React.FC = () => {
   const { theme, toggleThemeCustom } = useThemeCustom();
 
-  const { changeLocale } = useTranslation();
+  const { changeLocale, locale } = useTranslation();
 
   const colors = colorTokens(theme.palette.mode);
 
@@ -56,6 +56,7 @@ const Topbar: React.FC = () => {
 
         <IconButton type="button" onClick={changeLocale}>
           <TranslateOutlinedIcon />
+          <Typography>{locale === "en" ? "pt-br" : "en"}</Typography>
         </IconButton>
       </Box>
     </Box>

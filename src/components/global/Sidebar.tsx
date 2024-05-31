@@ -18,6 +18,7 @@ import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
 import { colorTokens } from "../../theme";
+import { useTranslation } from "../../hooks";
 
 interface ItemProps {
   title: string;
@@ -36,6 +37,7 @@ const Item: React.FC<ItemProps> = ({
 }) => {
   const theme = useTheme();
   const colors = colorTokens(theme.palette.mode);
+
   return (
     <MenuItem
       active={selected === title}
@@ -54,6 +56,7 @@ const Item: React.FC<ItemProps> = ({
 const Sidebar: React.FC = () => {
   const theme = useTheme();
   const colors = colorTokens(theme.palette.mode);
+  const { t } = useTranslation();
 
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
@@ -74,10 +77,10 @@ const Sidebar: React.FC = () => {
         "& .ps-inner-item": {
           padding: "5px 35px 5px 20px !important",
         },
-        "& .ps-inner-item:hover": {
+        "& .ps-menu-button:hover": {
           color: "#868dfb !important",
         },
-        "& .ps-menu-item.active": {
+        "& .ps-menu-button.ps-active": {
           color: "#6870fa !important",
         },
       }}
@@ -143,7 +146,7 @@ const Sidebar: React.FC = () => {
 
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
-              title="Dashboard"
+              title={t("common.dashboard")}
               to="/"
               icon={<HomeOutlinedIcon />}
               selected={selected}
@@ -155,24 +158,24 @@ const Sidebar: React.FC = () => {
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
-              Data
+              {t("common.data")}
             </Typography>
             <Item
-              title="Manage Team"
+              title={t("common.manageTeam")}
               to="/team"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Contacts Information"
+              title={t("common.contactsInformation")}
               to="/contacts"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Invoices Balances"
+              title={t("common.invoicesBalances")}
               to="/invoices"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
@@ -184,24 +187,24 @@ const Sidebar: React.FC = () => {
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
-              Pages
+              {t("common.pages")}
             </Typography>
             <Item
-              title="Profile Form"
+              title={t("common.profileForm")}
               to="/form"
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Calendar"
+              title={t("common.calendar")}
               to="/calendar"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="FAQ Page"
+              title={t("common.faqPage")}
               to="/faq"
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
@@ -213,31 +216,31 @@ const Sidebar: React.FC = () => {
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
-              Charts
+              {t("common.charts")}
             </Typography>
             <Item
-              title="Bar Chart"
+              title={t("common.barChart")}
               to="/bar"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Pie Chart"
+              title={t("common.pieChart")}
               to="/pie"
               icon={<PieChartOutlineIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Line Chart"
+              title={t("common.lineChart")}
               to="/line"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Geography Chart"
+              title={t("common.geographyChart")}
               to="/geography"
               icon={<MapOutlinedIcon />}
               selected={selected}

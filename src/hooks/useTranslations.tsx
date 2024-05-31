@@ -10,6 +10,7 @@ interface Props {
 type ILocales = "en" | "pt";
 
 interface ITranslation {
+  locale: ILocales;
   t: (scope: string, options?: TranslateOptions) => string;
   changeLocale: () => void;
 }
@@ -29,7 +30,7 @@ export const TranslationProvider = ({ children }: Props) => {
   }, []);
 
   return (
-    <TranslationContext.Provider value={{ t, changeLocale }}>
+    <TranslationContext.Provider value={{ t, changeLocale, locale }}>
       {children}
     </TranslationContext.Provider>
   );
