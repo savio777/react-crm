@@ -17,8 +17,8 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
-import { colorTokens } from "../../theme";
-import { useTranslation } from "../../hooks";
+import { colorTokens } from "@/theme";
+import { useTranslation } from "@/hooks";
 
 interface ItemProps {
   title: string;

@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 
-import HeaderPage from "../../components/atom/HeaderPage";
-import { useTranslation } from "../../hooks";
+import HeaderPage from "@/components/atom/HeaderPage";
+import { useTranslation } from "@/hooks";
 
 const Dashboard: React.FC = () => {
   const { t } = useTranslation();

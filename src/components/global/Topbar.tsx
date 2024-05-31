@@ -9,8 +9,8 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import TranslateOutlinedIcon from "@mui/icons-material/TranslateOutlined";
 
-import { colorTokens } from "../../theme";
-import { useThemeCustom, useTranslation } from "../../hooks";
+import { colorTokens } from "@/theme";
+import { useThemeCustom, useTranslation } from "@/hooks";
 
 const Topbar: React.FC = () => {
   const { theme, toggleThemeCustom } = useThemeCustom();

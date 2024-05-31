@@ -1,5 +1,5 @@
 import { Box, Typography, useTheme } from "@mui/material";
-import { colorTokens } from "../../theme";
+import { colorTokens } from "@/theme";
 
 interface Props {
   title: string;
