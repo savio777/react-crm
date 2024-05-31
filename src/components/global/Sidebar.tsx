@@ -63,6 +63,7 @@ const Sidebar: React.FC = () => {
       sx={{
         "& .ps-sidebar-container": {
           background: `${colors.primary[400]} !important`,
+          height: "100vh !important",
         },
         "& .ps-sidebar-inner": {
           background: `${colors.primary[400]} !important`,

@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App.tsx";
 import "./index.css";
-import { ThemeCustomProvider } from "./theme/useThemeCustom.tsx";
+import { ThemeCustomProvider } from "./hooks/useThemeCustom.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

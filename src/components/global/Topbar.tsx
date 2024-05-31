@@ -7,11 +7,15 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
+import TranslateOutlinedIcon from "@mui/icons-material/TranslateOutlined";
 
-import { useThemeCustom, colorTokens } from "../../theme";
+import { colorTokens } from "../../theme";
+import { useThemeCustom, useTranslation } from "../../hooks";
 
 const Topbar: React.FC = () => {
   const { theme, toggleThemeCustom } = useThemeCustom();
+
+  const { changeLocale } = useTranslation();
 
   const colors = colorTokens(theme.palette.mode);
 
@@ -48,6 +52,10 @@ const Topbar: React.FC = () => {
 
         <IconButton type="button">
           <PersonOutlinedIcon />
+        </IconButton>
+
+        <IconButton type="button" onClick={changeLocale}>
+          <TranslateOutlinedIcon />
         </IconButton>
       </Box>
     </Box>

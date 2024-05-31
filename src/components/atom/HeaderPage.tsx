@@ -16,6 +16,7 @@ const HeaderPage: React.FC<Props> = ({ title, subtitle }) => {
         variant="h2"
         color={colors.grey[100]}
         fontWeight="bold"
+        textTransform="uppercase"
         sx={{ m: "0 0 5px 0" }}
       >
         {title}

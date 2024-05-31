@@ -2,13 +2,12 @@ import {
   createContext,
   useMemo,
   useState,
-  useContext,
   ReactNode,
   useCallback,
 } from "react";
 import { createTheme, Theme } from "@mui/material";
 
-import { themeSettings } from "./config";
+import { themeSettings } from "../theme/config";
 
 interface Props {
   children: ReactNode;
@@ -22,8 +21,6 @@ interface IThemeCustom {
 export const ThemeCustomContext = createContext<IThemeCustom>(
   {} as IThemeCustom
 );
-
-export const useThemeCustom = () => useContext(ThemeCustomContext);
 
 export const ThemeCustomProvider = ({ children }: Props) => {
   const [mode, setMode] = useState<IThemeMode>("dark");

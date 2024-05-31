@@ -1,2 +1,2 @@
 export * from "./config";
-export * from "./useThemeCustom";
+export * from "../hooks/useThemeCustom";
