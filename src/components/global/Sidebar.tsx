@@ -17,6 +17,7 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
+import { useAuth } from "@/store/useAuth";
 import { colorTokens } from "@/theme";
 import { useTranslation } from "@/hooks";
 
@@ -57,6 +58,7 @@ const Sidebar: React.FC = () => {
   const theme = useTheme();
   const colors = colorTokens(theme.palette.mode);
   const { t } = useTranslation();
+  const { user } = useAuth();
 
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
@@ -121,7 +123,7 @@ const Sidebar: React.FC = () => {
             <Box mb="25px">
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
-                  src="https://avatars.githubusercontent.com/u/35678887?v=4"
+                  src={user.avatar_url}
                   alt="user avatar"
                   width="100px"
                   height="100px"
@@ -135,10 +137,10 @@ const Sidebar: React.FC = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Sávio Test
+                  {user.name}
                 </Typography>
                 <Typography variant="h5" color={colors.green[500]}>
-                  Admin-Test
+                  {user.occupation}
                 </Typography>
               </Box>
             </Box>

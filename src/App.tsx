@@ -1,28 +1,32 @@
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 
 import Routes from "./routes";
-import { useThemeCustom } from "./hooks";
-import { TranslationProvider } from "./hooks/useTranslations";
 import Topbar from "./components/global/Topbar";
 import Sidebar from "./components/global/Sidebar";
+import { useAuth } from "./store/useAuth";
+import Login from "./pages/auth/Login";
 
 const App: React.FC = () => {
-  const { theme } = useThemeCustom();
+  const { user } = useAuth();
 
   return (
-    <ThemeProvider theme={theme}>
-      <TranslationProvider>
-        <div className="app">
+    <div className="app">
+      {user?.isActive ? (
+        <>
           <Sidebar />
 
           <main className="content">
             <Topbar />
             <Routes />
           </main>
-        </div>
-        <CssBaseline />
-      </TranslationProvider>
-    </ThemeProvider>
+        </>
+      ) : (
+        <main className="content">
+          <Login />
+        </main>
+      )}
+      <CssBaseline />
+    </div>
   );
 };
 

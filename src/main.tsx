@@ -5,12 +5,15 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 import "./index.css";
 import { ThemeCustomProvider } from "./hooks/useThemeCustom.tsx";
+import HooksProvider from "./hooks/index.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeCustomProvider>
-        <App />
+        <HooksProvider>
+          <App />
+        </HooksProvider>
       </ThemeCustomProvider>
     </BrowserRouter>
   </React.StrictMode>

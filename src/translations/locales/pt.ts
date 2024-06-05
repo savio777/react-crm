@@ -14,6 +14,12 @@ export default {
     lineChart: "Gráfico de linha",
     geographyChart: "Carta Geográfica",
     profileForm: "Formulário de perfil",
+    email: "E-mail",
+    password: "Senha",
+    login: "Login",
+    send: "Enviar",
+    required: "Campo obrigatório",
+    invalidEmail: "E-mail inválido",
   },
   Dashboard: {
     title: "Dashboard",

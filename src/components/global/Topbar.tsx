@@ -11,13 +11,13 @@ import TranslateOutlinedIcon from "@mui/icons-material/TranslateOutlined";
 
 import { colorTokens } from "@/theme";
 import { useThemeCustom, useTranslation } from "@/hooks";
+import { useAuth } from "@/store/useAuth";
 
 const Topbar: React.FC = () => {
   const { theme, toggleThemeCustom } = useThemeCustom();
-
   const { changeLocale, locale } = useTranslation();
-
   const colors = colorTokens(theme.palette.mode);
+  const { logout } = useAuth();
 
   return (
     <Box display="flex" justifyContent="space-between" p={2}>
@@ -50,7 +50,7 @@ const Topbar: React.FC = () => {
           <SettingsOutlinedIcon />
         </IconButton>
 
-        <IconButton type="button">
+        <IconButton type="button" onClick={logout}>
           <PersonOutlinedIcon />
         </IconButton>
 
