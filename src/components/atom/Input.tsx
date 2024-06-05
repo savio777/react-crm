@@ -26,7 +26,11 @@ const Input: React.FC<Props> = ({ label, errorSchema, flex, ...props }) => (
 
     <TextField {...props} />
 
-    {!!errorSchema && <Typography color="red">{errorSchema}</Typography>}
+    {!!errorSchema && (
+      <Typography id="input-error-msg" color="red">
+        {errorSchema}
+      </Typography>
+    )}
   </>
 );
 

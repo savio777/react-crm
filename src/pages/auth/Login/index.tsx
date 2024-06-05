@@ -60,6 +60,7 @@ const Login: React.FC = () => {
           {({ values, handleChange, errors, handleSubmit }) => (
             <>
               <Input
+                id="email"
                 type="email"
                 placeholder={t("common.email")}
                 value={values.email}
@@ -68,6 +69,7 @@ const Login: React.FC = () => {
               />
 
               <Input
+                id="password"
                 type="password"
                 placeholder={t("common.password")}
                 value={values.password}
@@ -75,7 +77,11 @@ const Login: React.FC = () => {
                 errorSchema={errors?.password}
               />
 
-              <Button variant="contained" onClick={handleSubmit}>
+              <Button
+                id="button-send"
+                variant="contained"
+                onClick={handleSubmit}
+              >
                 {t("common.send")}
               </Button>
             </>
@@ -84,7 +90,11 @@ const Login: React.FC = () => {
       </Box>
 
       <Box display="flex" position="absolute" top="50px" right="200px">
-        <IconButton type="button" onClick={toggleThemeCustom}>
+        <IconButton
+          id="button-theme-change"
+          type="button"
+          onClick={toggleThemeCustom}
+        >
           {theme.palette.mode === "light" ? (
             <DarkModeOutlinedIcon />
           ) : (
@@ -92,7 +102,11 @@ const Login: React.FC = () => {
           )}
         </IconButton>
 
-        <IconButton type="button" onClick={changeLocale}>
+        <IconButton
+          id="button-language-change"
+          type="button"
+          onClick={changeLocale}
+        >
           <TranslateOutlinedIcon />
           <Typography>{locale === "en" ? "pt-br" : "en"}</Typography>
         </IconButton>
