@@ -57,7 +57,7 @@ const Login: React.FC = () => {
           initialValues={{ email: "", password: "" } as IAuthSchema}
           onSubmit={handleSubmitLogin}
         >
-          {({ values, handleChange, errors, handleSubmit }) => (
+          {({ values, handleChange, errors, handleSubmit, isValid }) => (
             <>
               <Input
                 id="email"
@@ -80,6 +80,7 @@ const Login: React.FC = () => {
               <Button
                 id="button-send"
                 variant="contained"
+                disabled={!isValid}
                 onClick={handleSubmit}
               >
                 {t("common.send")}

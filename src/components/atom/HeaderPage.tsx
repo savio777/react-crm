@@ -13,15 +13,16 @@ const HeaderPage: React.FC<Props> = ({ title, subtitle }) => {
   return (
     <Box mb="30px">
       <Typography
+        id="title-page"
         variant="h2"
-        color={colors.grey[100]}
         fontWeight="bold"
         textTransform="uppercase"
         sx={{ m: "0 0 5px 0" }}
+        color={colors.grey[100]}
       >
         {title}
       </Typography>
-      <Typography variant="h5" color={colors.green[400]}>
+      <Typography id="subtitle-page" variant="h5" color={colors.green[400]}>
         {subtitle}
       </Typography>
     </Box>
