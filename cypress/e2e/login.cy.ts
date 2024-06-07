@@ -2,6 +2,8 @@ describe("template spec", () => {
   it("passes", () => {
     cy.visit("http://localhost:5173/");
 
+    cy.wait(2000);
+
     // test input validation
 
     cy.get("#button-send").click();
