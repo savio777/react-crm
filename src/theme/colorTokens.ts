@@ -1,4 +1,4 @@
-export const colorTokens = (mode: IThemeMode) => ({
+export const colorTokens = (mode?: IThemeMode) => ({
   ...(mode === "dark"
     ? {
         grey: {
