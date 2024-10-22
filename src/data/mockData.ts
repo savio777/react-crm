@@ -1,4 +1,3 @@
-/*
 import { colorTokens } from "../theme";
 
 export const mockDataTeam = [
@@ -434,7 +433,7 @@ export const mockPieData = [
 export const mockLineData = [
   {
     id: "japan",
-    color: colorTokens("dark").greenAccent[500],
+    color: colorTokens("dark").green[500],
     data: [
       {
         x: "plane",
@@ -488,7 +487,7 @@ export const mockLineData = [
   },
   {
     id: "france",
-    color: colorTokens("dark").blueAccent[300],
+    color: colorTokens("dark").blue[300],
     data: [
       {
         x: "plane",
@@ -542,7 +541,7 @@ export const mockLineData = [
   },
   {
     id: "us",
-    color: colorTokens("dark").redAccent[200],
+    color: colorTokens("dark").red[200],
     data: [
       {
         x: "plane",
@@ -1282,4 +1281,3 @@ export const mockGeographyData = [
     value: 171135,
   },
 ];
-*/

@@ -20,9 +20,18 @@ export default {
     send: "Send",
     required: "Required field",
     invalidEmail: "E-mail invalid",
+    name: "Name",
+    age: "Age",
+    phone: "Phone",
+    access: "Access",
+    id: "ID",
   },
   Dashboard: {
     title: "Dashboard",
     subtitle: "Welcome to your dashboard",
+  },
+  Team: {
+    title: "Team",
+    subtitle: "Managing the Team Members",
   },
 };

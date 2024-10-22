@@ -42,54 +42,50 @@ const Login: React.FC = () => {
           "url('https://images.unsplash.com/photo-1502691876148-a84978e59af8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
       }}
     >
-      <Box
-        display="flex"
-        flexDirection="column"
-        bgcolor={theme.palette.background.paper}
-        padding={6}
-        borderRadius={3}
-        gap={2}
+      <Formik
+        validationSchema={authSchema}
+        initialValues={{ email: "", password: "" } as IAuthSchema}
+        onSubmit={handleSubmitLogin}
       >
-        <Typography variant="h2">{t("common.login")}</Typography>
+        {({ values, handleChange, errors, handleSubmit }) => (
+          <Box
+            component="form"
+            display="flex"
+            flexDirection="column"
+            bgcolor={theme.palette.background.paper}
+            padding={6}
+            borderRadius={3}
+            gap={2}
+            onSubmit={handleSubmit}
+          >
+            <Typography variant="h2">{t("common.login")}</Typography>
 
-        <Formik
-          validationSchema={authSchema}
-          initialValues={{ email: "", password: "" } as IAuthSchema}
-          onSubmit={handleSubmitLogin}
-        >
-          {({ values, handleChange, errors, handleSubmit }) => (
-            <>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                placeholder={t("common.email")}
-                value={values.email}
-                onChange={handleChange("email")}
-                errorSchema={errors?.email}
-              />
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              placeholder={t("common.email")}
+              value={values.email}
+              onChange={handleChange("email")}
+              errorSchema={errors?.email}
+            />
 
-              <Input
-                id="password"
-                name="password"
-                type="password"
-                placeholder={t("common.password")}
-                value={values.password}
-                onChange={handleChange("password")}
-                errorSchema={errors?.password}
-              />
+            <Input
+              id="password"
+              name="password"
+              type="password"
+              placeholder={t("common.password")}
+              value={values.password}
+              onChange={handleChange("password")}
+              errorSchema={errors?.password}
+            />
 
-              <Button
-                id="button-send"
-                variant="contained"
-                onClick={handleSubmit}
-              >
-                {t("common.send")}
-              </Button>
-            </>
-          )}
-        </Formik>
-      </Box>
+            <Button id="button-send" variant="contained" onClick={handleSubmit}>
+              {t("common.send")}
+            </Button>
+          </Box>
+        )}
+      </Formik>
 
       <Box display="flex" position="absolute" top="50px" right="200px">
         <IconButton type="button" onClick={toggleThemeCustom}>
